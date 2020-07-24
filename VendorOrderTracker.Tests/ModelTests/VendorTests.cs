@@ -31,5 +31,18 @@ namespace VendorOrderTracker.TestTools
 
       Assert.AreEqual("test vendor", newVendor.Name);
     }
+
+    [TestMethod]
+    public void VendorConstructor_AddsIdToInstanceOfVendor_VendorId()
+    {
+      string vendor1 = "vendor1";
+      string vendor2 = "vendor2";
+
+      Vendor newVendor = new Vendor(vendor1);
+      Vendor newVendor2 = new Vendor(vendor2);
+
+      Assert.AreEqual(1, newVendor.Id);
+      Assert.AreEqual(2, newVendor2.Id);
+    }
   }
 }
