@@ -26,10 +26,11 @@ namespace VendorOrderTracker.TestTools
     public void VendorConstructor_AddsNameToInstanceOfVendor_VendorName()
     {
       string vendorName = "test vendor";
-
       Vendor newVendor = new Vendor(vendorName);
 
-      Assert.AreEqual("test vendor", newVendor.Name);
+      string result = newVendor.Name;
+
+      Assert.AreEqual("test vendor", result);
     }
 
     [TestMethod]
