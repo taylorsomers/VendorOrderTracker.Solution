@@ -21,5 +21,15 @@ namespace VendorOrderTracker.TestTools
 
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    [TestMethod]
+    public void VendorConstructor_AddsNameToInstanceOfVendor_VendorName()
+    {
+      string vendorName = "test vendor";
+
+      Vendor newVendor = new Vendor(vendorName);
+
+      Assert.AreEqual("test vendor", newVendor.Name);
+    }
   }
 }
