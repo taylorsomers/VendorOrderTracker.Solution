@@ -38,7 +38,7 @@ namespace VendorOrderTracker.Tests
       Order newOrder = new Order(date);
 
       string newDate = "Jun 27";
-      newOrder.Date = "Jun 25";
+      newOrder.Date = newDate;
       string result = newOrder.Date;
 
       Assert.AreEqual(newDate, result);
