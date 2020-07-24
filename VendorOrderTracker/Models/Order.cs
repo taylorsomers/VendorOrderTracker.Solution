@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace VendorOrderTracker.Models
 {
@@ -18,6 +19,11 @@ namespace VendorOrderTracker.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static void ClearOrder(int searchId)
+    {
+      _instances[searchId - 1].Remove();
     }
 
     public static List<Order> GetAll()
