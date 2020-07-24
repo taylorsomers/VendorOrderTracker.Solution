@@ -43,5 +43,15 @@ namespace VendorOrderTracker.Tests
 
       Assert.AreEqual(newDate, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmpyList_OrderList()
+    {
+      List<Order> newList = new List<Order> {};
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
