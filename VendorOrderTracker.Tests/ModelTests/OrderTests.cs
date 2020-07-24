@@ -17,7 +17,7 @@ namespace VendorOrderTracker.Tests
     {
       string date = "test date";
       Order newOrder = new Order(date);
-      Assert.AreEqual(typeof(int), newOrder.GetType());
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
   }
 }
