@@ -67,5 +67,16 @@ namespace VendorOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string date = "Jun 25";
+      Order newOrder = new Order(date);
+
+      int result = newOrder.Id;
+
+      Assert.AreEqual(1, result);
+    }
   }
 }
