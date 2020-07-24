@@ -11,6 +11,7 @@ namespace VendorOrderTracker.Models
     public Order(string date)
     {
       Date = date;
+      Date = "wrong date";
       _instances.Add(this);
       Id = _instances.Count;
     }
