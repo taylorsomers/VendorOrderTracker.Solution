@@ -30,5 +30,18 @@ namespace VendorOrderTracker.Tests
 
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetDate_UpdatesDate_String()
+    {
+      string date = "Jun 25";
+      Order newOrder = new Order(date);
+
+      string newDate = "Jun 27";
+      newOrder.Date = "Jun 25";
+      string result = newOrder.Date;
+
+      Assert.AreEqual(newDate, result);
+    }
   }
 }
