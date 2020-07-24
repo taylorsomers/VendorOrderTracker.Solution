@@ -23,7 +23,7 @@ namespace VendorOrderTracker.Models
 
     public static void ClearOrder(int searchId)
     {
-      _instances[searchId - 1].Remove();
+      _instances.Remove(_instances[searchId - 1]);
     }
 
     public static List<Order> GetAll()
