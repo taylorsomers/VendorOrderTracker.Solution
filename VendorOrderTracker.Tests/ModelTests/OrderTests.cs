@@ -78,5 +78,18 @@ namespace VendorOrderTracker.Tests
 
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string date1 = "Jun 25";
+      string date2 = "Jun 27";
+      Order newOrder1 = new Order(date1);
+      Order newOrder2 = new Order(date2);
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
