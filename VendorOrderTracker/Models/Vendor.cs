@@ -12,6 +12,7 @@ namespace VendorOrderTracker.Models
     public Vendor(string vendorName)
     {
       Name = vendorName;
+      Name = "fake name";
       _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};
