@@ -24,6 +24,7 @@ namespace VendorOrderTracker.Models
 
     public static List<Vendor> GetAll()
     {
+      _instances.Clear();
       return _instances;
     }
   }
