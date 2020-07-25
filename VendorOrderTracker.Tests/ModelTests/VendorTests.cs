@@ -16,17 +16,19 @@ namespace VendorOrderTracker.TestTools
     public void VendorConstructor_CreatesInstancesOfVendor_Vendor()
     {
       string vendorName = "test vendor";
+      string vendorDescription = "test description";
       
-      Vendor newVendor = new Vendor(vendorName);
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
 
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
     [TestMethod]
-    public void VendorConstructor_AddsNameToInstanceOfVendor_VendorName()
+    public void SetName_AddsNameToInstanceOfVendor_VendorName()
     {
       string vendorName = "test vendor";
-      Vendor newVendor = new Vendor(vendorName);
+      string vendorDescription = "test description";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
 
       string result = newVendor.Name;
 
@@ -34,12 +36,26 @@ namespace VendorOrderTracker.TestTools
     }
 
     [TestMethod]
-    public void VendorConstructor_AddsIdToInstanceOfVendor_VendorId()
+    public void SetDescription_AddsDescriptionToInstanceOfVendor_VendorDescription()
+    {
+      string vendorName = "test vendor";
+      string vendorDescription = "test description";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+
+      string result = newVendor.Description;
+
+      Assert.AreEqual("test description", result);
+    }
+
+    [TestMethod]
+    public void SetId_AddsIdToInstanceOfVendor_VendorId()
     {
       string vendor1 = "vendor1";
       string vendor2 = "vendor2";
-      Vendor newVendor = new Vendor(vendor1);
-      Vendor newVendor2 = new Vendor(vendor2);
+      string description1 = "description1";
+      string description2 = "description2";
+      Vendor newVendor = new Vendor(vendor1, description1);
+      Vendor newVendor2 = new Vendor(vendor2, description2);
 
       int result = newVendor.Id;
       int result2 = newVendor2.Id;
@@ -53,8 +69,10 @@ namespace VendorOrderTracker.TestTools
     {
       string name1 = "vendor1";
       string name2 = "vendor2";
-      Vendor newVendor1 = new Vendor(name1);
-      Vendor newVendor2 = new Vendor(name2);
+      string description1 = "description1";
+      string description2 = "description2";
+      Vendor newVendor1 = new Vendor(name1, description1);
+      Vendor newVendor2 = new Vendor(name2, description2);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       List<Vendor> result = Vendor.GetAll();
@@ -67,8 +85,10 @@ namespace VendorOrderTracker.TestTools
     {
       string name1 = "vendor1";
       string name2 = "vendor2";
-      Vendor newVendor1 = new Vendor(name1);
-      Vendor newVendor2 = new Vendor(name2);
+      string description1 = "description1";
+      string description2 = "description2";
+      Vendor newVendor1 = new Vendor(name1, description1);
+      Vendor newVendor2 = new Vendor(name2, description2);
 
       Vendor result = Vendor.Find(2);
 
@@ -82,7 +102,8 @@ namespace VendorOrderTracker.TestTools
       Order newOrder = new Order(date);
       List<Order> newList = new List<Order> { newOrder };
       string name = "vendor1";
-      Vendor newVendor = new Vendor(name);
+      string description = "description1";
+      Vendor newVendor = new Vendor(name, description);
       newVendor.AddOrder(newOrder);
 
       List<Order> result = newVendor.Orders;
